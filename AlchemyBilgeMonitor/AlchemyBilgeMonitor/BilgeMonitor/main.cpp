@@ -87,7 +87,13 @@
 //FUNCTION PROTOTYPES
 //===============================================================================
 void initializeTimers(void);
-
+void pinsConfig(void);
+void bilgeOffDelay(uint8_t bilgeDelaySeconds);
+uint32_t cyclicBilgeTimerDelay(uint8_t hours);
+void runBilgeManually(void);
+void runBilgeAutomatically(void);
+void runBilgeCyclically(void);
+void readInputs(void);
 
 //interrupt vectors
 ISR(TIMER1_COMPA_vect);
@@ -108,7 +114,7 @@ volatile uint32_t bilgeEndTime = 0;
 uint32_t currentTime = 0;
 volatile uint32_t secondsCount = 0;
 uint8_t bilgeCountdownSeconds = 0;
-uint32_t cyclicBilgeTimerDelay = 
+
 
 
 //===============================================================================
@@ -128,38 +134,35 @@ ISR(TIMER1_COMPA_vect){  //TIMER INTERRUPT USED FOR COUNTDOWN BEFORE TURNING OFF
 }
 
 
-int main(void)
-{  //SETUP=======================================================================
+int main(void){ 
 
 	init();
 	initializeTimers();
+	pinsConfig();
 	Serial.begin(115200);
 	
-	//set main float switch pin to input pullup
-	cbi(DDRD, PORTD2);
-	sbi(PORTD,PORTD2);
-	
-	//set high water float switch pin to input pullup
-	cbi(DDRD, PORTD3);
-	sbi(PORTD,PORTD3);
-	
-	
-	
-	
-	
-//SETUP END=====================================================================
+	while(1){
 
-while(1)
-{  //LOOP=======================================================================
+		currentTime = millis();
+		readInputs();
+		runBilgeManually();
+		runBilgeAutomatically();
+		runBilgeCyclically();	
+	}
+	return(0);
+}
 
-	currentTime = millis();
 
-//READ INPUTS
+
+void readInputs(void){
+	//READ INPUTS
 	mainFloatSwitchState = READ_MAIN_FLOAT_SWITCH();
 	highFloatSwitchState = READ_HIGH_WATER_FLOAT_SWITCH();
 	manualBilgeSwitchState = READ_MANUAL_BILGE_SWITCH();
+}
 
-//RUN BILGE MANUALLY	
+void runBilgeManually(void){
+	//RUN BILGE MANUALLY
 	if(manualBilgeSwitchState == ACTIVE){
 		delay(50);									//for debounce
 		while(manualBilgeSwitchState == ACTIVE){
@@ -167,8 +170,10 @@ while(1)
 		}
 		bilgeOffDelay(0);
 	}
-	
-//RUN BILGE AUTOMATICALLY	
+}
+
+void runBilgeAutomatically(void){
+	//RUN BILGE AUTOMATICALLY
 	if(mainFloatSwitchState == ACTIVE){
 		delay(50);									//for debounce
 		mainFloatSwitchTrippedTime = millis();
@@ -179,16 +184,20 @@ while(1)
 		}
 		bilgeOffDelay(60);
 	}
-	
-//RUN BILGE CYCLICALLY
-		
-		
-
-		
-}  //LOOP END===================================================================
-return(0);
 }
 
+void runBilgeCyclically(void){
+	//RUN BILGE CYCLICALLY
+	if((currentTime - bilgeEndTime) >= cyclicBilgeTimerDelay(2)){
+		BILGE_ON();
+		bilgeOffDelay(30);
+	}
+}
+
+uint32_t cyclicBilgeTimerDelay(uint8_t hours){
+	uint32_t milliseconds = (3600000 * hours);
+	return milliseconds;
+}
 
 void bilgeOffDelay(uint8_t bilgeDelaySeconds){
 	bilgeCountdownSeconds = bilgeDelaySeconds;
@@ -211,7 +220,7 @@ void initializeTimers(void){
 	//sbi(TIMSK1, OCIE1A);		// ENABLE timer compare interrupt
 	sei();
 	
-		//Timer Pre-Scaler Register Settings
+		/*Timer Pre-Scaler Register Settings
 		/*==================================
 		|	CS12	|	CS11	|	CS10	|		-Clock Select bits
 		====================================
@@ -227,4 +236,18 @@ void initializeTimers(void){
 		-----------------------------------*/
 				
 
+}
+
+void pinsConfig(void){
+		//set main float switch pin to input pullup
+		cbi(DDRD, PORTD2);
+		sbi(PORTD,PORTD2);
+		
+		//set high water float switch pin to input pullup
+		cbi(DDRD, PORTD3);
+		sbi(PORTD,PORTD3);
+		
+		//set manual bilge switch pin to input pullup
+		cbi(DDRB, PORTB0);
+		sbi(PORTB,PORTB0);
 }
