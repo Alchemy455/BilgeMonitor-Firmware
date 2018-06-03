@@ -541,7 +541,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x900
+.text           0x00000000      0x960
  *(.vectors)
  .vectors       0x00000000       0x68 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x00000000                __vector_default
@@ -634,84 +634,87 @@ END GROUP
                 0x00000182       0x22 main.o
                 0x00000182                _Z10readInputsv
  .text._Z13bilgeOffDelayh
-                0x000001a4       0x18 main.o
+                0x000001a4       0x10 main.o
                 0x000001a4                _Z13bilgeOffDelayh
- .text._Z16runBilgeManuallyv
-                0x000001bc       0x2a main.o
-                0x000001bc                _Z16runBilgeManuallyv
- .text._Z21runBilgeAutomaticallyv
-                0x000001e6       0x5e main.o
-                0x000001e6                _Z21runBilgeAutomaticallyv
  .text._Z18runBilgeCyclicallyv
-                0x00000244       0x3e main.o
-                0x00000244                _Z18runBilgeCyclicallyv
+                0x000001b4       0x3e main.o
+                0x000001b4                _Z18runBilgeCyclicallyv
+ .text._Z9runAlarmsv
+                0x000001f2       0x3c main.o
+                0x000001f2                _Z9runAlarmsv
+ .text._Z16runBilgeManuallyv
+                0x0000022e       0x42 main.o
+                0x0000022e                _Z16runBilgeManuallyv
+ .text._Z21runBilgeAutomaticallyv
+                0x00000270       0x6e main.o
+                0x00000270                _Z21runBilgeAutomaticallyv
  .text._Z16initializeTimersv
-                0x00000282       0x3c main.o
-                0x00000282                _Z16initializeTimersv
+                0x000002de       0x3c main.o
+                0x000002de                _Z16initializeTimersv
  .text._Z10pinsConfigv
-                0x000002be        0xe main.o
-                0x000002be                _Z10pinsConfigv
+                0x0000031a        0xe main.o
+                0x0000031a                _Z10pinsConfigv
  .text.startup.main
-                0x000002cc       0x44 main.o
-                0x000002cc                main
+                0x00000328       0x48 main.o
+                0x00000328                main
  .text._ZN14HardwareSerial9availableEv
-                0x00000310       0x18 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000310                _ZN14HardwareSerial9availableEv
+                0x00000370       0x18 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00000370                _ZN14HardwareSerial9availableEv
  .text._ZN14HardwareSerial4peekEv
-                0x00000328       0x1c C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000328                _ZN14HardwareSerial4peekEv
+                0x00000388       0x1c C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00000388                _ZN14HardwareSerial4peekEv
  .text._ZN14HardwareSerial4readEv
-                0x00000344       0x28 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x00000344                _ZN14HardwareSerial4readEv
+                0x000003a4       0x28 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000003a4                _ZN14HardwareSerial4readEv
  .text._ZN14HardwareSerial17availableForWriteEv
-                0x0000036c       0x1e C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x0000036c                _ZN14HardwareSerial17availableForWriteEv
+                0x000003cc       0x1e C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000003cc                _ZN14HardwareSerial17availableForWriteEv
  .text._ZN14HardwareSerial17_tx_udr_empty_irqEv
-                0x0000038a       0x42 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x0000038a                _ZN14HardwareSerial17_tx_udr_empty_irqEv
+                0x000003ea       0x42 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000003ea                _ZN14HardwareSerial17_tx_udr_empty_irqEv
  .text._ZN14HardwareSerial5writeEh
-                0x000003cc       0x8e C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x000003cc                _ZN14HardwareSerial5writeEh
+                0x0000042c       0x8e C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x0000042c                _ZN14HardwareSerial5writeEh
  .text._ZN14HardwareSerial5flushEv
-                0x0000045a       0x44 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x0000045a                _ZN14HardwareSerial5flushEv
+                0x000004ba       0x44 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000004ba                _ZN14HardwareSerial5flushEv
  .text._ZN14HardwareSerial5beginEmh
-                0x0000049e       0xca C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
-                0x0000049e                _ZN14HardwareSerial5beginEmh
+                0x000004fe       0xca C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x000004fe                _ZN14HardwareSerial5beginEmh
  .text.__vector_18
-                0x00000568       0x64 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
-                0x00000568                __vector_18
+                0x000005c8       0x64 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x000005c8                __vector_18
  .text.__vector_19
-                0x000005cc       0x4c C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
-                0x000005cc                __vector_19
+                0x0000062c       0x4c C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x0000062c                __vector_19
  .text.startup._GLOBAL__sub_I___vector_18
-                0x00000618       0x5a C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00000678       0x5a C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
  .text._ZN5Print5writeEPKhj
-                0x00000672       0x54 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
-                0x00000672                _ZN5Print5writeEPKhj
+                0x000006d2       0x54 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x000006d2                _ZN5Print5writeEPKhj
  .text.__vector_16
-                0x000006c6       0x94 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x000006c6                __vector_16
- .text.millis   0x0000075a       0x18 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x0000075a                millis
- .text.micros   0x00000772       0x4a C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x00000772                micros
- .text.delay    0x000007bc       0x78 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x000007bc                delay
- .text.init     0x00000834       0x76 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x00000834                init
- .text.__empty  0x000008aa        0x2 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
-                0x000008aa                yield
+                0x00000726       0x94 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00000726                __vector_16
+ .text.millis   0x000007ba       0x18 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x000007ba                millis
+ .text.micros   0x000007d2       0x4a C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x000007d2                micros
+ .text.delay    0x0000081c       0x78 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x0000081c                delay
+ .text.init     0x00000894       0x76 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00000894                init
+ .text.__empty  0x0000090a        0x2 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+                0x0000090a                yield
  .text.libgcc.div
-                0x000008ac       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x000008ac                __udivmodsi4
- .text.libgcc   0x000008f0        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x000008f0                __tablejump2__
-                0x000008fc                . = ALIGN (0x2)
+                0x0000090c       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000090c                __udivmodsi4
+ .text.libgcc   0x00000950        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x00000950                __tablejump2__
+                0x0000095c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000008fc        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000008fc                _exit
-                0x000008fc                exit
+ .fini9         0x0000095c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x0000095c                _exit
+                0x0000095c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -730,11 +733,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000008fc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000095c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000900                _etext = .
+                0x00000960                _etext = .
 
-.data           0x00800100       0x12 load address 0x00000900
+.data           0x00800100       0x12 load address 0x00000960
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -792,8 +795,8 @@ END GROUP
                 0x008001cc                timer0_overflow_count
  *(COMMON)
                 0x008001d0                PROVIDE (__bss_end, .)
-                0x00000900                __data_load_start = LOADADDR (.data)
-                0x00000912                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000960                __data_load_start = LOADADDR (.data)
+                0x00000972                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001d0        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -869,86 +872,86 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x280
+.debug_aranges  0x00000000      0x288
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x68 main.o
+                0x00000000       0x70 main.o
  .debug_aranges
-                0x00000068       0x68 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+                0x00000070       0x68 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
  .debug_aranges
-                0x000000d0       0x48 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x000000d8       0x48 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
  .debug_aranges
-                0x00000118      0x100 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+                0x00000120      0x100 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
  .debug_aranges
-                0x00000218       0x48 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00000220       0x48 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
  .debug_aranges
-                0x00000260       0x20 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+                0x00000268       0x20 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x7140
+.debug_info     0x00000000     0x71b3
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_info    0x000005f4      0x5a5 main.o
- .debug_info    0x00000b99     0x1e89 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_info    0x00002a22     0x1b16 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_info    0x00004538     0x28ff C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_info    0x00006e37      0x2cb C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_info    0x00007102       0x3e C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_info    0x000005f4      0x618 main.o
+ .debug_info    0x00000c0c     0x1e89 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_info    0x00002a95     0x1b16 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_info    0x000045ab     0x28ff C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_info    0x00006eaa      0x2cb C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_info    0x00007175       0x3e C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
 
-.debug_abbrev   0x00000000     0x160b
+.debug_abbrev   0x00000000     0x1624
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_abbrev  0x000005a2      0x27f main.o
- .debug_abbrev  0x00000821      0x432 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_abbrev  0x00000c53      0x3ce C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_abbrev  0x00001021      0x47a C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_abbrev  0x0000149b      0x146 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_abbrev  0x000015e1       0x2a C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_abbrev  0x000005a2      0x298 main.o
+ .debug_abbrev  0x0000083a      0x432 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_abbrev  0x00000c6c      0x3ce C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_abbrev  0x0000103a      0x47a C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_abbrev  0x000014b4      0x146 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_abbrev  0x000015fa       0x2a C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
 
-.debug_line     0x00000000     0x14f0
+.debug_line     0x00000000     0x155f
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x133 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_line    0x00000133      0x3ac main.o
- .debug_line    0x000004df      0x426 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_line    0x00000905      0x28c C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_line    0x00000b91      0x685 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_line    0x00001216      0x299 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_line    0x000014af       0x41 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_line    0x00000133      0x41b main.o
+ .debug_line    0x0000054e      0x426 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_line    0x00000974      0x28c C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_line    0x00000c00      0x685 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_line    0x00001285      0x299 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_line    0x0000151e       0x41 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
 
-.debug_frame    0x00000000      0x76c
+.debug_frame    0x00000000      0x77c
  *(.debug_frame)
- .debug_frame   0x00000000       0xe8 main.o
- .debug_frame   0x000000e8      0x110 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_frame   0x000001f8       0xe0 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_frame   0x000002d8      0x3ac C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_frame   0x00000684       0xc4 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_frame   0x00000748       0x24 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_frame   0x00000000       0xf8 main.o
+ .debug_frame   0x000000f8      0x110 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_frame   0x00000208       0xe0 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_frame   0x000002e8      0x3ac C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_frame   0x00000694       0xc4 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_frame   0x00000758       0x24 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
 
-.debug_str      0x00000000     0x202d
+.debug_str      0x00000000     0x2045
  *(.debug_str)
  .debug_str     0x00000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_str     0x00000208      0x4e6 main.o
-                                0x53f (size before relaxing)
- .debug_str     0x000006ee     0x1315 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_str     0x00000208      0x4fe main.o
+                                0x557 (size before relaxing)
+ .debug_str     0x00000706     0x1315 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
                                0x15fd (size before relaxing)
- .debug_str     0x00001a03       0xca C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_str     0x00001a1b       0xca C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
                                0x1419 (size before relaxing)
- .debug_str     0x00001acd      0x3f1 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_str     0x00001ae5      0x3f1 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
                                0x1253 (size before relaxing)
- .debug_str     0x00001ebe      0x153 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_str     0x00001ed6      0x153 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
                                 0x25b (size before relaxing)
- .debug_str     0x00002011       0x1c C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_str     0x00002029       0x1c C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
                                 0x150 (size before relaxing)
 
-.debug_loc      0x00000000     0x25fe
+.debug_loc      0x00000000     0x260d
  *(.debug_loc)
- .debug_loc     0x00000000       0xb8 main.o
- .debug_loc     0x000000b8      0x482 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_loc     0x0000053a      0x1b0 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_loc     0x000006ea     0x1c87 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_loc     0x00002371      0x28d C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_loc     0x00000000       0xc7 main.o
+ .debug_loc     0x000000c7      0x482 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_loc     0x00000549      0x1b0 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_loc     0x000006f9     0x1c87 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_loc     0x00002380      0x28d C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -968,14 +971,14 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x250
+.debug_ranges   0x00000000      0x258
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x58 main.o
- .debug_ranges  0x00000058       0x58 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_ranges  0x000000b0       0x38 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_ranges  0x000000e8      0x120 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_ranges  0x00000208       0x38 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_ranges  0x00000240       0x10 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_ranges  0x00000000       0x60 main.o
+ .debug_ranges  0x00000060       0x58 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_ranges  0x000000b8       0x38 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_ranges  0x000000f0      0x120 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_ranges  0x00000210       0x38 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_ranges  0x00000248       0x10 C:\Users\mbarker\Desktop\GitHub\Matt\BILGEM~2\ALCHEM~1\ALCHEM~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
 
 .debug_macro
  *(.debug_macro)

@@ -6,7 +6,7 @@
 //									            PC6  1|    |28  PC5 (AI 5)
 //									      (D 0) PD0  2|    |27  PC4 (AI 4)
 //									      (D 1) PD1  3|    |26  PC3 (AI 3)
-//				main float switch	      (D 2) PD2  4|    |25  PC2 (AI 2)
+//			main float switch		      (D 2) PD2  4|    |25  PC2 (AI 2)
 //			high water float switch	 PWM+ (D 3) PD3  5|    |24  PC1 (AI 1)
 //			bilge bump relay		      (D 4) PD4  6|    |23  PC0 (AI 0)
 //									            VCC  7|    |22  GND
@@ -20,17 +20,8 @@
 
 
 
-#define ACTIVE		0  //FLOAT SWITCHES ARE ACTIVE LOW
+#define ACTIVE		0  //FLOAT SWITCHES AND MANUAL SWITCH ARE ACTIVE LOW
 #define INACTIVE	1
-
-#define YES 1
-#define NO 0
-
-#define TIME_15_SECONDS		15000
-#define TIME_30_SECONDS		30000
-#define TIME_60_SECONDS		60000
-#define TIME_120_SECONDS	120000
-#define TIME_2_HOURS		(7200000)
 
 
 //===============================================================================
@@ -46,9 +37,9 @@
 #define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
 #endif
 
-#define BILGE_ON()					\
+#define BILGE_ON()					\  
 	do {							\
-		sbi(DDRD, PORTD4);			\
+		sbi(DDRD, PORTD4);			\ 
 		sbi(PORTD,PORTD4);			\
 	} while(0)
 
@@ -94,6 +85,7 @@ void runBilgeManually(void);
 void runBilgeAutomatically(void);
 void runBilgeCyclically(void);
 void readInputs(void);
+void runAlarms(void);
 
 //interrupt vectors
 ISR(TIMER1_COMPA_vect);
@@ -123,8 +115,8 @@ ISR(TIMER1_COMPA_vect){  //TIMER INTERRUPT USED FOR COUNTDOWN BEFORE TURNING OFF
 	secondsCount++;
 	
 	if (secondsCount >= bilgeCountdownSeconds){
-		secondsCount = 0;
 		BILGE_OFF();
+		secondsCount = 0;
 		bilgeEndTime = currentTime;
 		cbi(TIMSK1, OCIE1A);		// disable timer compare interrupt
 	}
@@ -147,11 +139,19 @@ int main(void){
 		readInputs();
 		runBilgeManually();
 		runBilgeAutomatically();
-		runBilgeCyclically();	
+		runBilgeCyclically();
+		
+		runAlarms();	
+		
 	}
 	return(0);
 }
 
+//void logDataToEeprom(void){
+	//eeprom_busy_wait();
+	//eeprom_update_dword(0,0xffffffff);
+	//eeprom_read_dword(0);
+//}
 
 
 void readInputs(void){
@@ -164,11 +164,14 @@ void readInputs(void){
 void runBilgeManually(void){
 	//RUN BILGE MANUALLY
 	if(manualBilgeSwitchState == ACTIVE){
-		delay(50);									//for debounce
+		delay(100);									//for debounce
 		while(manualBilgeSwitchState == ACTIVE){
 			BILGE_ON();
+			manualBilgeSwitchState = READ_MANUAL_BILGE_SWITCH();
+			highFloatSwitchState = READ_HIGH_WATER_FLOAT_SWITCH();
+			runAlarms();
 		}
-		bilgeOffDelay(0);
+		bilgeOffDelay(1);
 	}
 }
 
@@ -181,14 +184,16 @@ void runBilgeAutomatically(void){
 			BILGE_ON();
 			mainFloatSwitchState = READ_MAIN_FLOAT_SWITCH();
 			mainFloatSwitchClearedTime = millis();
+			highFloatSwitchState = READ_HIGH_WATER_FLOAT_SWITCH();
+			runAlarms();
 		}
-		bilgeOffDelay(60);
+		bilgeOffDelay(30);
 	}
 }
 
 void runBilgeCyclically(void){
 	//RUN BILGE CYCLICALLY
-	if((currentTime - bilgeEndTime) >= cyclicBilgeTimerDelay(2)){
+	if((currentTime - bilgeEndTime) > cyclicBilgeTimerDelay(2)){
 		BILGE_ON();
 		bilgeOffDelay(30);
 	}
@@ -201,8 +206,21 @@ uint32_t cyclicBilgeTimerDelay(uint8_t hours){
 
 void bilgeOffDelay(uint8_t bilgeDelaySeconds){
 	bilgeCountdownSeconds = bilgeDelaySeconds;
-	TCNT1 = 0;					// reset timer value to 0
+	//TCNT1 = 0;					// reset timer value to 0
 	sbi(TIMSK1, OCIE1A);		// ENABLE timer compare interrupt for bilge on delay
+}
+
+void runAlarms(void){
+	if (highFloatSwitchState == ACTIVE)	{
+		delay(50);        
+		while(highFloatSwitchState == ACTIVE){
+			HIGH_WATER_ALARM_ON();
+			BILGE_ON();
+			highFloatSwitchState = READ_HIGH_WATER_FLOAT_SWITCH();
+		}
+		HIGH_WATER_ALARM_OFF();
+		bilgeOffDelay(120);
+	}
 }
 
 void initializeTimers(void){
