@@ -12,7 +12,7 @@ Arduino = https://bit.ly/2rk4y6m
 <br>
 Bilge pump = https://bit.ly/2wsffsG  (pump has an integrated float switch and controller, but it sucks...)
 
-Developed in Atmel Studio but includes the arduino core core so I can do things like Serial.print and if anyone want's to modify it for their use it'll be easy to add arduino syntax like digitalwrite and such.
+Developed in Atmel Studio but includes the arduino core libraries so I can do things like Serial.print and if anyone want's to modify it for their use it'll be easy to add arduino syntax like digitalwrite and such.
 
 Wiring diagram and connection info is written in the comments in main.cpp
 
