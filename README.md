@@ -4,10 +4,10 @@ Bilge Controller Software for my Sailboat
 Uses an arduino and a relay sheild from seeed studio and a RULE Mate 2000GPH bilge pump
 
 
-// ATMEL ATMEGA328
-//
-//									                                +-\/-+
-//									                          PC6  1|    |28  PC5 (AI 5)
+<br> // ATMEL ATMEGA328
+<br>//
+<br>//									                                +-\/-+
+<br>//									                          PC6  1|    |28  PC5 (AI 5)
 //									                    (D 0) PD0  2|    |27  PC4 (AI 4)
 //									                    (D 1) PD1  3|    |26  PC3 (AI 3)
 //			main float switch		            (D 2) PD2  4|    |25  PC2 (AI 2)
